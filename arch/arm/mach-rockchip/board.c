@@ -1480,6 +1480,7 @@ static void bootargs_add_dtb_dtbo(void *fdt, bool verbose)
 	}
 }
 
+#ifdef CONFIG_CMD_BOOT_ANDROID
 char *board_fdt_chosen_bootargs(void *fdt)
 {
 	int verbose = is_hotkey(HK_CMDLINE);
@@ -1524,6 +1525,7 @@ char *board_fdt_chosen_bootargs(void *fdt)
 
 	return (char *)bootargs;
 }
+#endif
 
 int ft_verify_fdt(void *fdt)
 {
