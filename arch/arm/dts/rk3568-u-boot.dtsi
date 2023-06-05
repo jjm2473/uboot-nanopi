@@ -80,6 +80,11 @@
 
 &u2phy0_otg {
 	u-boot,dm-pre-reloc;
+	phys = <&u2phy0_otg>;
+	phy-names = "usb2-phy";
+	extcon = <&usb2phy0>;
+	maximum-speed = "high-speed"; /* only USB2.0 */
+	snps,dis_u2_susphy_quirk; /* only USB2.0 */
 	status = "okay";
 };
 
@@ -367,16 +372,6 @@
 
 &eth1m1_clkout_pins {
 	u-boot,dm-pre-reloc;
-};
-
-&pcie30phy {
-	u-boot,dm-pre-reloc;
-	status = "okay";
-};
-
-&pcie3x2 {
-	u-boot,dm-pre-reloc;
-	status = "okay";
 };
 
 &pinctrl {
