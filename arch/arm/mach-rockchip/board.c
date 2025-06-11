@@ -1285,6 +1285,7 @@ int board_rng_seed(struct abuf *buf)
 	return 0;
 }
 
+#ifdef CONFIG_CMD_BOOT_ANDROID
 /*
  * Pass fwver when any available.
  */
@@ -1479,6 +1480,7 @@ static void bootargs_add_dtb_dtbo(void *fdt, bool verbose)
 #endif
 	}
 }
+#endif
 
 #ifdef CONFIG_CMD_BOOT_ANDROID
 char *board_fdt_chosen_bootargs(void *fdt)
